@@ -1,7 +1,9 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerlessTodo", "ServerlessTodo.csproj", "{2A629CEE-B2B4-469F-B40A-0D51A0C1DA9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerlessTodo.Domain", "ServerlessTodo.Domain\ServerlessTodo.Domain.csproj", "{1EBD6AFD-2F48-4F97-8E07-A2E00CE12859}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerlessTodo.Api", "ServerlessTodo.Api\ServerlessTodo.Api.csproj", "{A397394D-00D7-49D8-83B6-A4943536AF57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,9 +11,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2A629CEE-B2B4-469F-B40A-0D51A0C1DA9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2A629CEE-B2B4-469F-B40A-0D51A0C1DA9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2A629CEE-B2B4-469F-B40A-0D51A0C1DA9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2A629CEE-B2B4-469F-B40A-0D51A0C1DA9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EBD6AFD-2F48-4F97-8E07-A2E00CE12859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EBD6AFD-2F48-4F97-8E07-A2E00CE12859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EBD6AFD-2F48-4F97-8E07-A2E00CE12859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EBD6AFD-2F48-4F97-8E07-A2E00CE12859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A397394D-00D7-49D8-83B6-A4943536AF57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A397394D-00D7-49D8-83B6-A4943536AF57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A397394D-00D7-49D8-83B6-A4943536AF57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A397394D-00D7-49D8-83B6-A4943536AF57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

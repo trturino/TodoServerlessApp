@@ -1,7 +1,7 @@
 ﻿using FunctionMonkey.Abstractions;
 using FunctionMonkey.Abstractions.Builders;
 
-namespace ServerlessTodo
+namespace ServerlessTodo.Api
 {
     public class FunctionAppStartup : IFunctionAppConfiguration
     {
@@ -12,7 +12,8 @@ namespace ServerlessTodo
                 {
                 })
                 .Functions(functions =>
-                );
+                {
+                });
         }
     }
 }
