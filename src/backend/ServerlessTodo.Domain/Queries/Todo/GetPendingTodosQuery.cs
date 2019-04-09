@@ -3,7 +3,7 @@ using AzureFromTheTrenches.Commanding.Abstractions;
 
 namespace ServerlessTodo.Domain.Queries.Todo
 {
-    public class GetAllTodosQuery : ICommand<IEnumerable<Models.Todo>>
+    public class GetPendingTodosQuery : ICommand<IEnumerable<Models.Todo>>
     {
     }
 }
