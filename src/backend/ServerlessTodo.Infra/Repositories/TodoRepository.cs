@@ -1,11 +1,12 @@
 ﻿using Cosmonaut;
 using ServerlessTodo.Domain.Models;
+using ServerlessTodo.Domain.Repositories;
 
 namespace ServerlessTodo.Infra.Repositories
 {
-    public class TodoRepository : WriteRepository<Todo>
+    public class TodoRepository : WriteRepository<Todo>, ITodoWriteRepository, ITodoReadOnlyRepository
     {
-        public TodoRepository(CosmosStore<Todo> cosmosStore) : base(cosmosStore)
+        public TodoRepository(ICosmosStore<Todo> cosmosStore) : base(cosmosStore)
         {
         }
     }

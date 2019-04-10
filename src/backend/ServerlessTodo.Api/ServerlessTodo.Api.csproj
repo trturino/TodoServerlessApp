@@ -1,15 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <AzureFunctionsVersion></AzureFunctionsVersion>
+    <AzureFunctionsVersion>v2</AzureFunctionsVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.24" />
-    <PackageReference Include="FunctionMonkey" Version="2.0.0" />
-    <PackageReference Include="FunctionMonkey.Compiler" Version="2.0.0" />
+    <PackageReference Include="Cosmonaut.Extensions.Microsoft.DependencyInjection" Version="2.3.0" />
+    <PackageReference Include="FunctionMonkey" Version="2.1.0" />
+    <PackageReference Include="FunctionMonkey.Compiler" Version="2.1.0" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.26" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ServerlessTodo.Domain\ServerlessTodo.Domain.csproj" />
+    <ProjectReference Include="..\ServerlessTodo.Infra\ServerlessTodo.Infra.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">

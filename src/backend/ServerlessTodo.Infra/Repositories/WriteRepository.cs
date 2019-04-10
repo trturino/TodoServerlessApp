@@ -12,9 +12,9 @@ namespace ServerlessTodo.Infra.Repositories
 {
     public class WriteRepository<TEntity> : IWriteRepository<TEntity> where TEntity : Model
     {
-        private readonly CosmosStore<TEntity> _cosmosStore;
+        private readonly ICosmosStore<TEntity> _cosmosStore;
 
-        public WriteRepository(CosmosStore<TEntity> cosmosStore)
+        public WriteRepository(ICosmosStore<TEntity> cosmosStore)
         {
             _cosmosStore = cosmosStore;
         }

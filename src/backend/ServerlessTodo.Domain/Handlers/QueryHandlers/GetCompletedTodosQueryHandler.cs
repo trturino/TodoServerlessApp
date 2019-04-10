@@ -7,7 +7,7 @@ using ServerlessTodo.Domain.Repositories;
 
 namespace ServerlessTodo.Domain.Handlers.QueryHandlers
 {
-    public class GetCompletedTodosQueryHandler : ICommandHandler<GetPendingTodosQuery, IEnumerable<Todo>>
+    public class GetCompletedTodosQueryHandler : ICommandHandler<GetCompletedTodosQuery, IEnumerable<Todo>>
     {
         private readonly ITodoReadOnlyRepository _todoReadOnlyRepository;
 
@@ -16,7 +16,7 @@ namespace ServerlessTodo.Domain.Handlers.QueryHandlers
             _todoReadOnlyRepository = todoReadOnlyRepository;
         }
 
-        public async Task<IEnumerable<Todo>> ExecuteAsync(GetPendingTodosQuery command, IEnumerable<Todo> previousResult)
+        public async Task<IEnumerable<Todo>> ExecuteAsync(GetCompletedTodosQuery command, IEnumerable<Todo> previousResult)
         {
             return await _todoReadOnlyRepository.GetAll(x => x.Completed == true);
         }
