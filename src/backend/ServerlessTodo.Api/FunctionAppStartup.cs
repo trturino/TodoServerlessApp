@@ -2,8 +2,10 @@
 using System.Net.Http;
 using Cosmonaut;
 using Cosmonaut.Extensions.Microsoft.DependencyInjection;
+using FluentValidation;
 using FunctionMonkey.Abstractions;
 using FunctionMonkey.Abstractions.Builders;
+using FunctionMonkey.FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using ServerlessTodo.Api.ResponseHandler;
 using ServerlessTodo.Domain.Commands.Todo;
@@ -12,6 +14,7 @@ using ServerlessTodo.Domain.Handlers.QueryHandlers;
 using ServerlessTodo.Domain.Models;
 using ServerlessTodo.Domain.Queries.Todo;
 using ServerlessTodo.Domain.Repositories;
+using ServerlessTodo.Domain.Validators;
 using ServerlessTodo.Infra.Repositories;
 
 namespace ServerlessTodo.Api
@@ -37,14 +40,20 @@ namespace ServerlessTodo.Api
                     serviceCollection.AddCosmosStore<Todo>(cosmosSettings);
                     serviceCollection.AddScoped<ITodoWriteRepository, TodoRepository>();
                     serviceCollection.AddScoped<ITodoReadOnlyRepository, TodoRepository>();
+
+                    serviceCollection.AddScoped<IValidator<AddNewTodoCommand>, AddNewTodoCommandValidator>();
+                    serviceCollection.AddScoped<IValidator<DoneTodoCommand>, DoneTodoCommandValidator>();
+                    serviceCollection.AddScoped<IValidator<RemoveTodoCommand>, RemoveTodoCommandValidator>();
                 })
                 .OpenApiEndpoint(openApi => openApi
                     .Title("Todo API")
                     .Version("1.0.0")
                 )
+                .AddFluentValidation()
                 .Functions(functions => functions
                     .HttpRoute("v1/todo", route => route
                         .HttpFunction<AddNewTodoCommand>(AuthorizationTypeEnum.Anonymous, HttpMethod.Post)
+
                     )
                     .HttpRoute("v1/todo/done", route => route
                         .HttpFunction<DoneTodoCommand>(AuthorizationTypeEnum.Anonymous, HttpMethod.Put)

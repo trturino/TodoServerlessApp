@@ -10,11 +10,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repositories\" />
-    <Folder Include="Commands\" />
     <Folder Include="Models\" />
-    <Folder Include="Commands\Todo\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="8.2.2" />
     <PackageReference Include="FunctionMonkey.Abstractions" Version="2.1.0" />
   </ItemGroup>
 </Project>

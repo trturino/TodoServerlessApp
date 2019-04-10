@@ -11,5 +11,7 @@ namespace ServerlessTodo.Domain.Repositories
         Task<TEntity> GetById(Guid id);
 
         Task<IEnumerable<TEntity>> GetAll(Expression<Func<TEntity, bool>> predicate = null);
+
+        Task<bool> Exists(Guid id);
     }
 }

@@ -3,8 +3,7 @@ using System;
 
 namespace ServerlessTodo.Domain.Commands.Todo
 {
-    public class DoneTodoCommand : ICommand<bool>
+    public class DoneTodoCommand : ModelCommand<Models.Todo>, ICommand<bool>
     {
-        public Guid Id { get; set; }
     }
 }

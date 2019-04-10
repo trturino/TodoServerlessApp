@@ -2,7 +2,7 @@
 
 namespace ServerlessTodo.Domain.Models
 {
-    public class Model
+    public abstract class Model
     {
         public Guid Id { get; set; }
     }

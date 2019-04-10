@@ -24,6 +24,12 @@ namespace ServerlessTodo.Infra.Repositories
             await _cosmosStore.AddAsync(obj);
         }
 
+        public async Task<bool> Exists(Guid id)
+        {
+            var item = await GetById(id);
+            return item != null;
+        }
+
         public async Task<IEnumerable<TEntity>> GetAll(Expression<Func<TEntity, bool>> predicate = null)
         {
             var query = _cosmosStore.Query();
