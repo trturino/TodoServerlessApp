@@ -48,6 +48,7 @@ namespace ServerlessTodo.Api
                 .OpenApiEndpoint(openApi => openApi
                     .Title("Todo API")
                     .Version("1.0.0")
+                    .UserInterface()
                 )
                 .AddFluentValidation()
                 .Functions(functions => functions

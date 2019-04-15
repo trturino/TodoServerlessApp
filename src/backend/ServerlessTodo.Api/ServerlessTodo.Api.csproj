@@ -23,4 +23,7 @@
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
   </ItemGroup>
+  <PropertyGroup>
+    <LangVersion>7.1</LangVersion>
+</PropertyGroup>
 </Project>
