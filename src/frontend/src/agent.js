@@ -3,7 +3,7 @@ import _superagent from 'superagent';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
-const API_ROOT = 'http://turino-tdc-api.trafficmanager.net/v1';
+const API_ROOT = 'https://turino-tdc-api-brazil.azurewebsites.net/v1';
 
 const responseBody = res => res.body;
 
