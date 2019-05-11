@@ -54,7 +54,7 @@ namespace ServerlessTodo.Api
                 .Functions(functions => functions
                     .HttpRoute("v1/todo", route => route
                         .HttpFunction<AddNewTodoCommand>(AuthorizationTypeEnum.Anonymous, HttpMethod.Post)
-
+                        .Options(options => options.ResponseHandler<AcceptedResponseHandler>())
                     )
                     .HttpRoute("v1/todo/done", route => route
                         .HttpFunction<DoneTodoCommand>(AuthorizationTypeEnum.Anonymous, HttpMethod.Put)

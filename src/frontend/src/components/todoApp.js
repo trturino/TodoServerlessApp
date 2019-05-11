@@ -5,6 +5,7 @@ import { TodoList } from './todoList';
 import { Todo } from '../agent';
 import { VisibilityFilters } from '../constants/actionTypes';
 import { VisibilityFilter } from './visibilityFilter';
+import * as uuidv1 from 'uuid/v1';
 
 export class TodoApp extends React.Component {
 
@@ -35,7 +36,8 @@ export class TodoApp extends React.Component {
     async addTask(task) {
         let updatedList = this.state.tasks;
         this.isLoading(true);
-        const todo = await Todo.save({ description: task })
+        const todo = { description: task, id: uuidv1() };
+        await Todo.save(todo);
         this.isLoading(false);
         updatedList.push(todo);
         this.setState({ tasks: updatedList });

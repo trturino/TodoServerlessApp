@@ -7,7 +7,7 @@ using ServerlessTodo.Domain.Repositories;
 
 namespace ServerlessTodo.Domain.Handlers.CommandHandlers
 {
-    public class AddNewTodoCommandHandler : ICommandHandler<AddNewTodoCommand, Todo>
+    public class AddNewTodoCommandHandler : ICommandHandler<AddNewTodoCommand, bool>
     {
         private readonly ITodoWriteRepository _todoRepository;
 
@@ -16,18 +16,18 @@ namespace ServerlessTodo.Domain.Handlers.CommandHandlers
             _todoRepository = todoWriteRepository;
         }
 
-        public async Task<Todo> ExecuteAsync(AddNewTodoCommand command, Todo previousResult)
+        public async Task<bool> ExecuteAsync(AddNewTodoCommand command, bool previousResult)
         {
             var todo = new Todo()
             {
                 Completed = false,
-                Id = Guid.NewGuid(),
+                Id = command.Id,
                 Description = command.Description
             };
 
             await _todoRepository.Add(todo);
 
-            return todo;
+            return true;
         }
     }
 }

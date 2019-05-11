@@ -13,7 +13,8 @@
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
     "superagent": "^5.0.2",
-    "superagent-promise": "^1.1.0"
+    "superagent-promise": "^1.1.0",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
